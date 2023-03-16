@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Gun
+  - Enemy
+  - Bullet
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Player
+  - Hazards
+  - Enemy
+  - Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2733422975
+    locked: 0
+  - name: TreeLine4
+    uniqueID: 1331872231
+    locked: 0
+  - name: TreeLine3
+    uniqueID: 4263103741
+    locked: 0
+  - name: TreeLine2
+    uniqueID: 2560797209
+    locked: 0
+  - name: TreeLine1
+    uniqueID: 2782094997
+    locked: 0
+  - name: Enemies
+    uniqueID: 2849925383
+    locked: 0
+  - name: Gun
+    uniqueID: 3691129609
+    locked: 0
+  - name: Player
+    uniqueID: 1452245583
+    locked: 0
+  - name: Hazards
+    uniqueID: 2972546289
+    locked: 0
+  - name: Ground
+    uniqueID: 2637617311
+    locked: 0
