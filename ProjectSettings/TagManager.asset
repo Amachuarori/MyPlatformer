@@ -8,6 +8,8 @@ TagManager:
   - Gun
   - Enemy
   - Bullet
+  - Undefined
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Hazards
   - Enemy
   - Bullet
-  - 
-  - 
+  - Bouncing
+  - EnemyBullet
   - 
   - 
   - 
@@ -60,11 +62,11 @@ TagManager:
   - name: TreeLine1
     uniqueID: 2782094997
     locked: 0
-  - name: Enemies
-    uniqueID: 2849925383
-    locked: 0
   - name: Gun
     uniqueID: 3691129609
+    locked: 0
+  - name: Enemies
+    uniqueID: 2849925383
     locked: 0
   - name: Player
     uniqueID: 1452245583

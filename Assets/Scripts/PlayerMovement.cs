@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Speed")]
+    [Header("Player Stats")]
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 20f;
+    [SerializeField] int hp = 3;
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
 
     [Header("GameObjects")]
@@ -44,7 +45,19 @@ public class PlayerMovement : MonoBehaviour
             FlipSprite();
             StartCoroutine(Die());
         }
-        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "EnemyBullet" && hp >=1){
+            hp--;
+            Destroy(other.gameObject);
+            Debug.Log("Player HP " + hp);
+        }
+        if(other.tag == "EnemyBullet" && hp == 0){
+            isAlive = false;
+            Destroy(other.gameObject);
+            StartCoroutine(Die());
+        }
     }
 
     IEnumerator Die(){
@@ -52,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             myRigidBody.velocity = deathKick;
             myAnimator.SetTrigger("Died");
+        }
+        
+        if(!isAlive){
             yield return new WaitForSecondsRealtime(2);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

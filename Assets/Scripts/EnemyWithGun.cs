@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyWithGun : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] int hp = 5;
     [SerializeField] ParticleSystem deadBubbler;
     [SerializeField] AudioClip deadBubblerClip;
-    
+    [SerializeField] Transform gun;
+    [SerializeField] GameObject bullet;
+    [SerializeField] float bulletInterval;
+    float intervalShooting;
+    float bulletDistructionTime = 1f;
     Animator anim;
     Rigidbody2D rbody;
     AudioSource audioSour;
@@ -21,11 +25,28 @@ public class EnemyMovement : MonoBehaviour
         scaleY = transform.localScale.y;
         scaleX = transform.localScale.x;
         audioSour = GetComponent<AudioSource>();
+        intervalShooting = bulletInterval;
     }
     void Update()
     {
         Moving();
+        BulletInstantiating();
+       
     }
+    
+
+    void BulletInstantiating(){
+        intervalShooting -= (Time.deltaTime);
+        if(intervalShooting < 0){
+            Instantiate(bullet, gun.position, transform.rotation);
+            intervalShooting = bulletInterval;
+            while(bulletDistructionTime > 0){
+                bulletDistructionTime -=(Time.deltaTime);
+            }
+            bulletDistructionTime = 1f;
+        }
+    }
+    
 
     IEnumerator DeadState(){
         deadBubbler.Play();

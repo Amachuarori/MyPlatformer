@@ -26,19 +26,10 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         
-        if(other.tag == "Enemy"){
-            var enemy  = FindObjectOfType<EnemyMovement>();
-            if(enemy.getHP() < 1){     
-                Destroy(gameObject); 
-                Debug.Log(enemy.getHP() + " kek");
-            }
-            else
-                Destroy(gameObject);
-                Debug.Log(enemy.getHP() + " kek");
-        }
-        else if(other.tag == "Ground"){
+        if(other.tag == "Ground"){
 
             Destroy(gameObject);
-        }
+        } 
     }
+    
 }
