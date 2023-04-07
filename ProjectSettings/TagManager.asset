@@ -10,6 +10,9 @@ TagManager:
   - Bullet
   - Undefined
   - EnemyBullet
+  - WallForBullets
+  - Ladder
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -24,9 +27,9 @@ TagManager:
   - Bullet
   - Bouncing
   - EnemyBullet
-  - 
-  - 
-  - 
+  - Ladder
+  - Platform
+  - Coin
   - 
   - 
   - 
@@ -50,6 +53,18 @@ TagManager:
   - name: Background
     uniqueID: 2733422975
     locked: 0
+  - name: FarClouds
+    uniqueID: 247902517
+    locked: 0
+  - name: MiddleClouds
+    uniqueID: 4106858687
+    locked: 0
+  - name: CloseClouds
+    uniqueID: 1203331901
+    locked: 0
+  - name: TreeLine5
+    uniqueID: 2330425593
+    locked: 0
   - name: TreeLine4
     uniqueID: 1331872231
     locked: 0
@@ -61,6 +76,9 @@ TagManager:
     locked: 0
   - name: TreeLine1
     uniqueID: 2782094997
+    locked: 0
+  - name: MovingPlatform
+    uniqueID: 2905872925
     locked: 0
   - name: Gun
     uniqueID: 3691129609
